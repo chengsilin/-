@@ -1,0 +1,20 @@
+
+# Project specific
+/external-docs
+~$*.docx
+*.tmp
+*.jar
+
+# CMake generated files
+[Bb]uild/
+*.vcxproj
+*.vcxproj.filters
+CMakeCache.txt
+CMakeFiles/
+*.sln
+*.cmake
+
+# Visual Studio Generated Files
+[Dd]ebug/
+.vs/
+*.vcxproj.*

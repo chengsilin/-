@@ -1,0 +1,7 @@
+1.网上教程
+CS231n，主页：http://cs231n.stanford.edu/。主要看http://cs231n.stanford.edu/syllabus.html中的slides。
+
+2.论文列表
+文件夹中的所有论文。
+
+3.框架PyTorch：http://pytorch.org/

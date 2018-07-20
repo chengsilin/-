@@ -1,0 +1,29 @@
+#include <iostream>
+#include "../morph-linear/morphlib.h"
+
+using namespace std;
+using namespace morph;
+
+void apply_dialation(BinaryImage& img, BinaryImage& out) {
+#pragma omp parallel for
+	for (int y = 0; y < img.height; ++y) {
+	#pragma omp parallel for
+		for (int x = 0; x < img.width; ++x) {
+			bool hit = false;
+			for (int i = 0; i < 9; ++i) {
+				int dy = (i / 3) - 1;
+				int dx = (i % 3) - 1;
+				if (img.pixel(x + dx, y + dy)) {
+					hit = true;
+					break;
+				}
+			}
+
+			out.set_pixel(x, y, hit);
+		}
+	}
+}
+
+int main(int argc, char** argv) {
+	return exec_test(argc, argv, apply_dialation);
+}
